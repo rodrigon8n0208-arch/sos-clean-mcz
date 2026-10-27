@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S.O.S Clean MCZ | Higienização de Estofados em Maceió</title>
+<meta name="description" content="Higienização e impermeabilização profissional de sofás, colchões, poltronas, cadeiras, tapetes e interior de veículos em Maceió-AL. Atendimento em domicílio.">
+<meta name="theme-color" content="#0E2556">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14316B;
+    --navy-deep:#0E2556;
+    --ink:#0A1A3D;
+    --paper:#F5F3EE;
+    --paper-2:#ECE8DF;
+    --white:#FFFFFF;
+    --aqua:#86BCC6;
+    --aqua-soft:#CFE4E8;
+    --muted:#5B6782;
+    --line:rgba(20,49,107,.14);
+    --line-light:rgba(255,255,255,.16);
+    --ease:cubic-bezier(.22,1,.36,1);
+    --serif:"Instrument Serif", Georgia, serif;
+    --sans:"Poppins", system-ui, sans-serif;
+    --wrap:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+  @media(min-width:768px){.wrap{width:min(var(--wrap),100% - 64px)}}
+
+  /* ---------- reveal (entrada e saída) ---------- */
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+  [data-reveal="left"]{transform:translateX(-32px)}
+  [data-reveal="right"]{transform:translateX(32px)}
+  [data-reveal="scale"]{transform:scale(.96)}
+  [data-reveal].in{opacity:1;transform:none}
+  .mask{display:block;overflow:hidden;padding-bottom:.08em}
+  .mask>span{display:block;transform:translateY(105%);transition:transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+  .in .mask>span,.mask.in>span{transform:none}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s var(--ease),box-shadow .4s var(--ease),transform .5s var(--ease)}
+  .nav.scrolled{background:rgba(14,37,86,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line-light)}
+  .nav.hide{transform:translateY(-100%)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff}
+  .brand img{height:46px;width:auto}
+  footer .brand img{height:64px}
+  .nav ul{display:none;list-style:none;gap:34px;color:rgba(255,255,255,.82);font-size:.88rem}
+  .nav ul a{position:relative;padding:4px 0}
+  .nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+  .nav ul a:hover{color:#fff}
+  .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+  @media(min-width:900px){.nav ul{display:flex}}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:500;font-size:.92rem;border-radius:999px;padding:14px 26px;cursor:pointer;border:0;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s var(--ease)}
+  .btn svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+  .btn:hover svg{transform:translateX(3px)}
+  .btn:active{transform:scale(.97)}
+  .btn-light{background:#fff;color:var(--navy-deep)}
+  .btn-light:hover{box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{background:var(--navy-deep);box-shadow:0 14px 30px -14px rgba(14,37,86,.7)}
+  .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.35);background:transparent}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .nav .btn{padding:10px 18px;font-size:.82rem}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--navy-deep);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+  section.hero{padding:0}
+  .hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:30% 72%;transform:scaleX(-1) scale(1.06);opacity:0;transition:opacity 1.6s var(--ease)}
+  .loaded .hero-bg img{opacity:1;animation:kenburns 22s ease-in-out infinite alternate}
+  @keyframes kenburns{from{transform:scaleX(-1) scale(1.06)}to{transform:scaleX(-1) scale(1.14) translate(1.5%,-1%)}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+    linear-gradient(90deg,rgba(9,24,58,.94) 0%,rgba(14,37,86,.82) 34%,rgba(14,37,86,.38) 66%,rgba(14,37,86,.18) 100%),
+    linear-gradient(180deg,rgba(9,24,58,.55) 0%,transparent 22%,transparent 62%,rgba(20,49,107,.95) 100%)}
+  @media(max-width:999px){.hero::before{background:linear-gradient(180deg,rgba(9,24,58,.78) 0%,rgba(14,37,86,.72) 45%,rgba(14,37,86,.9) 80%,var(--navy) 100%)}}
+  .hero-grid{flex:1;display:grid;gap:48px;align-items:center;padding:140px 0 64px}
+  @media(min-width:1000px){.hero-grid{grid-template-columns:1.35fr .65fr;gap:40px;padding:130px 0 56px}}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.6rem);margin:20px 0 22px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+  .eyebrow i{width:28px;height:1px;background:currentColor;opacity:.6}
+  .hero .eyebrow{color:var(--aqua-soft)}
+  h1{font-family:var(--sans);font-weight:600;font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-.045em;margin:22px 0 26px}
+  h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+  h1 em{color:var(--aqua-soft)}
+  .lead{font-size:clamp(1rem,1.3vw,1.12rem);color:rgba(255,255,255,.74);max-width:46ch;font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line-light);font-size:.84rem;color:rgba(255,255,255,.7)}
+  .hero-meta div{display:flex;align-items:center;gap:10px}
+  .hero-meta svg{width:18px;height:18px;color:var(--aqua)}
+
+  .hero-side{display:none;gap:14px;width:100%;max-width:340px}
+  @media(min-width:1000px){.hero-side{display:grid}}
+  @media(min-width:1000px){.hero-side{justify-self:end;align-self:end;margin-bottom:8px}}
+  .glass{position:relative;display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 50px -24px rgba(0,0,0,.55);font-size:.8rem;line-height:1.35}
+  .glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,rgba(255,255,255,.45),rgba(255,255,255,.06) 50%,rgba(134,188,198,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .glass strong{display:block;font-weight:500;font-size:.92rem}
+  .glass span{color:rgba(255,255,255,.7)}
+  .glass .ic{width:40px;height:40px;border-radius:12px;background:rgba(207,228,232,.18);display:grid;place-items:center;color:var(--aqua-soft);flex:none}
+  .glass .ic svg{width:20px;height:20px}
+  .glass.float{animation:bob 7s ease-in-out infinite}
+  .glass.float:nth-child(2){animation-delay:-2.3s}
+  .glass.float:nth-child(3){animation-delay:-4.6s}
+  @keyframes bob{50%{transform:translateY(-6px)}}
+  @media(min-width:1000px){.hero-side .glass:nth-child(2){margin-left:-36px}}
+  .scroll-cue{display:none;position:absolute;left:50%;bottom:92px;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid rgba(255,255,255,.4);border-radius:12px}
+  .scroll-cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#fff;animation:cue 2s var(--ease) infinite}
+  @keyframes cue{0%{opacity:0;transform:translateY(-3px)}40%{opacity:1}100%{opacity:0;transform:translateY(10px)}}
+  @media(min-width:1000px) and (min-height:760px){.scroll-cue{display:block}}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--navy);color:#fff;overflow:hidden;border-top:1px solid var(--line-light)}
+  .marquee-track{display:flex;width:max-content;animation:marq var(--dur,38s) linear infinite}
+  .marquee span{display:flex;align-items:center;gap:28px;padding:22px 14px;font-size:clamp(1.1rem,2vw,1.5rem);white-space:nowrap;font-weight:300}
+  .marquee span em{font-family:var(--serif);font-size:1.15em}
+  .marquee span i{width:7px;height:7px;border-radius:50%;background:var(--aqua);display:block}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(80px,11vw,140px) 0}
+  .sec-head{display:grid;gap:22px;margin-bottom:clamp(44px,6vw,72px)}
+  @media(min-width:900px){.sec-head{grid-template-columns:1fr 1fr;align-items:end}}
+  .sec-head .eyebrow{color:var(--navy)}
+  h2{font-weight:600;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.06;letter-spacing:-.04em;margin-top:16px}
+  h2 em{color:var(--navy)}
+  .sec-head p{color:var(--muted);max-width:44ch;font-weight:300}
+  @media(min-width:900px){.sec-head p{justify-self:end}}
+
+  /* ---------- services ---------- */
+  .services{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
+  @media(min-width:640px){.services{grid-template-columns:1fr 1fr}}
+  @media(min-width:1000px){.services{grid-template-columns:repeat(3,1fr)}}
+  .svc{position:relative;padding:38px 30px 34px;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+  @media(min-width:640px){.svc{border-right:1px solid var(--line)}.svc:nth-child(2n){border-right:0}}
+  @media(min-width:1000px){.svc:nth-child(2n){border-right:1px solid var(--line)}.svc:nth-child(3n){border-right:0}}
+  .svc::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--navy);transform:translateY(101%);transition:transform .6s var(--ease)}
+  .svc:hover{color:#fff}
+  .svc:hover::before{transform:none}
+  .svc{padding:22px 22px 32px}
+  .svc-media{aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin-bottom:24px;background:var(--paper-2)}
+  .svc-media img{width:100%;height:100%;object-fit:cover;transform-origin:var(--o,50% 50%);transform:scale(var(--z,1));transition:transform 1.4s var(--ease)}
+  .svc:hover .svc-media img{transform:scale(calc(var(--z,1) * 1.08))}
+  .svc .num{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--muted);margin-bottom:6px;transition:color .5s}
+  .svc:hover .num{color:var(--aqua-soft)}
+  .svc h3{font-size:1.5rem;font-weight:500;letter-spacing:-.03em;margin-bottom:8px}
+  .svc p{font-size:.92rem;color:var(--muted);font-weight:300;transition:color .5s}
+  .svc:hover p{color:rgba(255,255,255,.75)}
+  .svc .go{position:absolute;right:28px;bottom:32px;width:38px;height:38px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;opacity:0;transform:translate(-8px,8px);transition:opacity .4s,transform .5s var(--ease)}
+  .svc:hover .go{opacity:1;transform:none}
+  .svc .go svg{width:16px;height:16px}
+
+  /* ---------- before / after ---------- */
+  .ba{background:var(--paper-2)}
+  .ba-grid{display:grid;gap:48px;align-items:center}
+  @media(min-width:960px){.ba-grid{grid-template-columns:.9fr 1.1fr;gap:72px}}
+  .ba-grid .eyebrow{color:var(--navy)}
+  .ba-copy p{color:var(--muted);font-weight:300;margin-top:18px;max-width:42ch}
+  .ba-list{list-style:none;margin-top:30px;display:grid;gap:14px}
+  .ba-list li{display:flex;gap:14px;align-items:flex-start;font-size:.95rem}
+  .ba-list svg{width:22px;height:22px;flex:none;color:var(--navy);margin-top:1px}
+  .compare{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:#DCD6CA;user-select:none;touch-action:pan-y;box-shadow:0 40px 80px -40px rgba(10,26,61,.45)}
+  .compare .layer{position:absolute;inset:0}
+  .compare .layer img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .compare .before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+  .compare .tag{position:absolute;top:18px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.85);color:var(--ink)}
+  .compare .before .tag{left:18px}
+  .compare .after .tag{right:18px;background:var(--navy);color:#fff}
+  .compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+  .compare .handle::after{content:"";position:absolute;top:50%;left:50%;width:48px;height:48px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .compare .handle svg{position:absolute;top:50%;left:50%;width:22px;height:22px;max-width:none;transform:translate(-50%,-50%);z-index:1;color:var(--navy)}
+  .compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+  .compare .hint{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:.72rem;color:var(--muted);background:rgba(255,255,255,.8);padding:6px 12px;border-radius:999px;pointer-events:none;transition:opacity .4s}
+  .compare.touched .hint{opacity:0}
+
+  /* ---------- process ---------- */
+  .process{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+  .process .eyebrow{color:var(--aqua-soft)}
+  .process h2 em{color:var(--aqua-soft)}
+  .process .sec-head p{color:rgba(255,255,255,.66)}
+  .steps{display:grid;gap:0;counter-reset:s}
+  @media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+  .step{position:relative;padding:34px 26px 30px 0;border-top:1px solid var(--line-light)}
+  @media(min-width:900px){.step{padding-right:30px}}
+  .step::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:100%;background:var(--aqua);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease);transition-delay:calc(var(--d,0s) + .2s)}
+  .step.in::before{transform:scaleX(1)}
+  .step .n{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--aqua-soft);opacity:.9}
+  .step h3{font-weight:500;font-size:1.15rem;margin:22px 0 10px;letter-spacing:-.02em}
+  .step p{font-size:.9rem;color:rgba(255,255,255,.62);font-weight:300}
+
+  /* ---------- why ---------- */
+  .why-grid{display:grid;gap:18px}
+  @media(min-width:900px){.why-grid{grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:auto auto}}
+  .why{background:#fff;border-radius:22px;padding:34px 30px;border:1px solid var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+  .why:hover{transform:translateY(-6px);box-shadow:0 30px 60px -36px rgba(10,26,61,.4)}
+  .why .icon{width:46px;height:46px;border-radius:14px;background:var(--aqua-soft);color:var(--navy);display:grid;place-items:center;margin-bottom:28px}
+  .why .icon svg{width:24px;height:24px}
+  .why h3{font-size:1.2rem;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+  .why p{font-size:.92rem;color:var(--muted);font-weight:300}
+  .why.feature{background:var(--navy);color:#fff;border:0;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+  @media(min-width:900px){.why.feature{grid-row:span 2}}
+  .why.feature p{color:rgba(255,255,255,.72)}
+  .why.feature h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:500;line-height:1.1;letter-spacing:-.035em}
+  .why.feature h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--aqua-soft)}
+  .why.feature .icon{background:rgba(255,255,255,.1);color:#fff}
+  .shield-anim{position:absolute;right:-40px;bottom:-40px;width:240px;height:240px;opacity:.12}
+  .beads{display:flex;gap:6px;margin-top:22px}
+  .beads i{width:10px;height:13px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--aqua-soft);animation:bead 2.4s ease-in-out infinite}
+  .beads i:nth-child(2){animation-delay:.2s}.beads i:nth-child(3){animation-delay:.4s}.beads i:nth-child(4){animation-delay:.6s}
+  @keyframes bead{50%{transform:translateY(-6px);opacity:.6}}
+
+  /* ---------- faq ---------- */
+  .faq-grid{display:grid;gap:48px}
+  @media(min-width:960px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:80px}}
+  .faq-grid .eyebrow{color:var(--navy)}
+  .faq-side p{color:var(--muted);margin-top:18px;font-weight:300;max-width:36ch}
+  .faq-side .btn{margin-top:28px}
+  details{border-bottom:1px solid var(--line)}
+  details:first-child{border-top:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:1.05rem;font-weight:500;letter-spacing:-.01em}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{position:relative;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);flex:none;transition:background .4s,border-color .4s}
+  summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:var(--navy);transform:translate(-50%,-50%);transition:transform .45s var(--ease),background .4s}
+  summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+  details[open] summary .pm{background:var(--navy);border-color:var(--navy)}
+  details[open] summary .pm::before,details[open] summary .pm::after{background:#fff}
+  details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+  .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+  details[open] .ans{grid-template-rows:1fr}
+  .ans>div{overflow:hidden}
+  .ans p{padding:0 48px 26px 0;color:var(--muted);font-weight:300;font-size:.96rem}
+
+  /* ---------- location ---------- */
+  .loc{padding-top:0}
+  .loc-card{display:grid;border-radius:28px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  @media(min-width:900px){.loc-card{grid-template-columns:.9fr 1.1fr}}
+  .loc-info{padding:clamp(32px,5vw,56px)}
+  .loc-info .eyebrow{color:var(--navy)}
+  .loc-info h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+  .loc-rows{margin-top:32px;display:grid;gap:22px}
+  .loc-row{display:flex;gap:16px;align-items:flex-start}
+  .loc-row .ic{width:42px;height:42px;border-radius:12px;background:var(--paper);display:grid;place-items:center;color:var(--navy);flex:none}
+  .loc-row .ic svg{width:20px;height:20px}
+  .loc-row small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .loc-row a,.loc-row span{font-weight:500}
+  .loc-row a:hover{color:var(--navy)}
+  .map{min-height:340px;background:var(--paper-2)}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.35) contrast(1.05)}
+
+  /* ---------- final cta ---------- */
+  .cta{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+  .cta::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-radial-gradient(circle at 50% 120%,transparent 0 60px,rgba(255,255,255,.05) 60px 61px)}
+  .cta h2{font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch;margin:18px auto 0}
+  .cta h2 em{color:var(--aqua-soft)}
+  .cta p{color:rgba(255,255,255,.72);margin:22px auto 36px;max-width:44ch;font-weight:300}
+  .cta .eyebrow{color:var(--aqua-soft)}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:56px 0 34px;font-size:.86rem}
+  .foot{display:grid;gap:30px}
+  @media(min-width:800px){.foot{grid-template-columns:1.4fr 1fr 1fr;align-items:start}}
+  footer h4{color:#fff;font-weight:500;font-size:.85rem;margin-bottom:14px}
+  footer li{list-style:none;margin-bottom:8px}
+  footer a:hover{color:#fff}
+  .foot-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.78rem}
+
+  /* ---------- floating whatsapp ---------- */
+  .wa{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border-radius:999px;padding:14px;box-shadow:0 18px 40px -14px rgba(0,0,0,.45);transform:translateY(120px);opacity:0;transition:transform .7s var(--ease),opacity .5s,padding .4s var(--ease)}
+  .wa.show{transform:none;opacity:1}
+  .wa svg{width:26px;height:26px}
+  .wa span{max-width:0;overflow:hidden;white-space:nowrap;font-weight:500;font-size:.88rem;transition:max-width .5s var(--ease)}
+  .wa:hover span{max-width:180px}
+  .wa::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #25D366;animation:ping 2.6s var(--ease) infinite}
+  @keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+
+  /* ---------- load intro ---------- */
+  .hero .mask>span{transition-duration:1.2s}
+  body:not(.loaded) .hero [data-reveal]{opacity:0}
+
+  @media (prefers-reduced-motion:reduce){
+    *:not(.marquee-track),*::before,*::after{animation:none!important;transition:none!important}
+    [data-reveal],.mask>span{opacity:1!important;transform:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== ÍCONES REUTILIZÁVEIS ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.5 2.6 2.5L16 9.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14 -1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3.5-3c1-.8 2.3-.8 3.2 0l4.3 3.6"/><path d="M21 12h-3l-4.5 4.5a1.8 1.8 0 0 1-2.5 0L9 14.5"/><path d="M6 12v5l3 2M18 12v5l-3 2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19 13 11"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== NAV ========== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="S.O.S Clean MCZ — início"><img src="assets/logo-branca.png" alt="S.O.S Clean MCZ — Higienização e Impermeabilização" width="371" height="182">
+    </a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#resultado">Resultado</a></li>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn-light" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener">Orçamento <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/img/hero-sala.jpg" alt="" fetchpriority="high"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-reveal style="--d:.1s"><i></i>Higienização &amp; impermeabilização · Maceió</span>
+      <h1>
+        <span class="mask"><span style="--d:.15s">Seu sofá com</span></span>
+        <span class="mask"><span style="--d:.28s"><em>cara de novo,</em></span></span>
+        <span class="mask"><span style="--d:.41s">sem sair de casa.</span></span>
+      </h1>
+      <p class="lead" data-reveal style="--d:.6s">Higienização profissional de sofás, colchões, poltronas, cadeiras, tapetes e interior de veículos. Removemos sujeira, manchas e odores preservando as fibras do seu estofado.</p>
+      <div class="hero-cta" data-reveal style="--d:.75s">
+        <a class="btn btn-light" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir orçamento grátis</a>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="hero-meta" data-reveal style="--d:.9s">
+        <div><svg><use href="#i-home"/></svg>Atendimento em domicílio</div>
+        <div><svg><use href="#i-shield"/></svg>Produtos de qualidade</div>
+        <div><svg><use href="#i-tag"/></svg>Preço justo</div>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="glass float" data-reveal="right" style="--d:.9s"><div class="ic"><svg><use href="#i-drop"/></svg></div><div><strong>Higienização a fundo</strong><span>Remove sujeira, ácaros e odores</span></div></div>
+      <div class="glass float" data-reveal="right" style="--d:1.05s"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><strong>Impermeabilização</strong><span>Proteção contra líquidos e manchas</span></div></div>
+      <div class="glass float" data-reveal="right" style="--d:1.2s"><div class="ic"><svg><use href="#i-pin"/></svg></div><div><strong>Maceió e região</strong><span>Vamos até a sua casa</span></div></div>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Sofás <i></i> <em>Colchões</em> <i></i> Poltronas <i></i> <em>Cadeiras</em> <i></i> Tapetes <i></i> <em>Interior de veículos</em> <i></i> Impermeabilização <i></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVIÇOS ========== -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-reveal><i></i>Nossos serviços</span>
+        <h2 data-reveal style="--d:.1s">Cuidado completo para<br>cada <em>estofado</em> da casa.</h2>
+      </div>
+      <p data-reveal style="--d:.2s">Equipamentos profissionais e produtos de qualidade para deixar seus estofados impecáveis — com técnica certa para cada tipo de tecido.</p>
+    </div>
+
+    <div class="services">
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20sof%C3%A1" target="_blank" rel="noopener" data-reveal style="--d:0s">
+        <div class="svc-media"><img src="assets/img/sofa.jpg" alt="Sofá cinza em sala de estar aconchegante" loading="lazy" style="--o:92% 72%;--z:1.45"></div>
+        <span class="num">01</span>
+        <h3>Sofás</h3><p>Retráteis, de canto, de couro ou tecido. Higienização profunda com extração.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20colch%C3%A3o" target="_blank" rel="noopener" data-reveal style="--d:.08s">
+        <div class="svc-media"><img src="assets/img/colchao.jpg" alt="Quarto com cama e colchão arrumados" loading="lazy" style="--o:70% 60%;--z:1.15"></div>
+        <span class="num">02</span>
+        <h3>Colchões</h3><p>Remoção de ácaros, manchas e odores para noites mais saudáveis.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20poltrona" target="_blank" rel="noopener" data-reveal style="--d:.16s">
+        <div class="svc-media"><img src="assets/img/sala-clara.jpg" alt="Poltronas brancas em sala ampla" loading="lazy" style="--o:8% 85%;--z:1.9"></div>
+        <span class="num">03</span>
+        <h3>Poltronas</h3><p>Da poltrona do papai à cadeira de amamentação, com acabamento cuidadoso.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20cadeiras" target="_blank" rel="noopener" data-reveal style="--d:0s">
+        <div class="svc-media"><img src="assets/img/sofa.jpg" alt="Cadeira estofada ao lado do sofá" loading="lazy" style="--o:12% 75%;--z:2.1"></div>
+        <span class="num">04</span>
+        <h3>Cadeiras</h3><p>Cadeiras de jantar e escritório com assento estofado, limpas e sem odor.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20tapete" target="_blank" rel="noopener" data-reveal style="--d:.08s">
+        <div class="svc-media"><img src="assets/img/sala-clara.jpg" alt="Tapete persa em sala de estar" loading="lazy" style="--o:42% 100%;--z:1.7"></div>
+        <span class="num">05</span>
+        <h3>Tapetes</h3><p>Tapetes de sala e quarto revitalizados, com cores mais vivas.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="svc" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20interior%20de%20ve%C3%ADculo" target="_blank" rel="noopener" data-reveal style="--d:.16s">
+        <div class="svc-media"><img src="assets/img/veiculo.jpg" alt="Carro com interior estofado" loading="lazy" style="--o:55% 60%;--z:1.1"></div>
+        <span class="num">06</span>
+        <h3>Interior de veículos</h3><p>Bancos, teto e carpetes do seu carro higienizados no seu endereço.</p>
+        <span class="go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ANTES / DEPOIS ========== -->
+<section class="ba" id="resultado">
+  <div class="wrap ba-grid">
+    <div class="ba-copy">
+      <span class="eyebrow" data-reveal><i></i>O resultado</span>
+      <h2 data-reveal style="--d:.1s">A diferença que<br>você <em>sente</em> e vê.</h2>
+      <p data-reveal style="--d:.2s">Arraste para comparar. A higienização remove a sujeira que fica impregnada nas fibras e devolve cor, maciez e cheiro de limpo ao seu estofado.</p>
+      <ul class="ba-list">
+        <li data-reveal style="--d:.25s"><svg><use href="#i-check"/></svg>Remoção de manchas, sujeira e odores</li>
+        <li data-reveal style="--d:.32s"><svg><use href="#i-check"/></svg>Preserva a qualidade das fibras do tecido</li>
+        <li data-reveal style="--d:.39s"><svg><use href="#i-check"/></svg>Ambiente mais limpo e saudável para a família</li>
+      </ul>
+    </div>
+
+    <div class="compare" id="compare" data-reveal="right" style="--d:.15s">
+      <div class="layer after">
+        <img src="assets/img/depois.jpg" alt="Sofá azul depois da higienização, limpo e sem manchas" loading="lazy" draggable="false">
+        <span class="tag">Depois</span>
+      </div>
+      <div class="layer before">
+        <img src="assets/img/antes.jpg" alt="Sofá azul antes da higienização, com manchas no assento e no encosto" loading="lazy" draggable="false">
+        <span class="tag">Antes</span>
+      </div>
+      <div class="handle"><svg><use href="#i-swap"/></svg></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      <span class="hint">← arraste →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMO FUNCIONA ========== -->
+<section class="process" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-reveal><i></i>Como funciona</span>
+        <h2 data-reveal style="--d:.1s">Simples do primeiro<br>contato ao <em>resultado.</em></h2>
+      </div>
+      <p data-reveal style="--d:.2s">Você agenda pelo WhatsApp e nós vamos até você. Sem complicação, sem precisar tirar nada do lugar.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal style="--d:0s"><div class="n">01</div><h3>Fale com um profissional</h3><p>Chame no WhatsApp, envie fotos do estofado e tire suas dúvidas.</p></div>
+      <div class="step" data-reveal style="--d:.12s"><div class="n">02</div><h3>Agende um horário</h3><p>Escolha o dia e o horário que forem melhores para você.</p></div>
+      <div class="step" data-reveal style="--d:.24s"><div class="n">03</div><h3>Higienização no local</h3><p>Nosso profissional vai até sua casa com todo o equipamento necessário.</p></div>
+      <div class="step" data-reveal style="--d:.36s"><div class="n">04</div><h3>Aproveite o resultado</h3><p>Estofado limpo, cheiroso e pronto para mais anos de conforto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIFERENCIAIS ========== -->
+<section id="diferenciais">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-reveal><i></i>Por que a S.O.S</span>
+        <h2 data-reveal style="--d:.1s">Qualidade que<br>se nota no <em>toque.</em></h2>
+      </div>
+      <p data-reveal style="--d:.2s">Técnicas avançadas e um compromisso: resultados excepcionais, preservando seus estofados e o seu bolso.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why feature" data-reveal="left">
+        <svg class="shield-anim" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width=".6"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/></svg>
+        <div>
+          <div class="icon"><svg><use href="#i-shield"/></svg></div>
+          <h3>Impermeabilização que <em>protege</em> por muito mais tempo.</h3>
+        </div>
+        <div>
+          <p>Depois de higienizado, seu estofado pode receber uma camada protetora que repele líquidos e facilita a limpeza do dia a dia — ideal para casas com crianças e pets.</p>
+          <div class="beads"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="why" data-reveal style="--d:.08s"><div class="icon"><svg><use href="#i-award"/></svg></div><h3>Qualidade</h3><p>Produtos de qualidade e técnica adequada para cada tipo de tecido.</p></div>
+      <div class="why" data-reveal style="--d:.16s"><div class="icon"><svg><use href="#i-hand"/></svg></div><h3>Profissionalismo</h3><p>Pontualidade, cuidado com sua casa e atendimento atencioso do início ao fim.</p></div>
+      <div class="why" data-reveal style="--d:.24s"><div class="icon"><svg><use href="#i-tag"/></svg></div><h3>Preço justo</h3><p>Orçamento transparente e sem surpresas, combinado antes do serviço.</p></div>
+      <div class="why" data-reveal style="--d:.32s"><div class="icon"><svg><use href="#i-home"/></svg></div><h3>Na sua casa</h3><p>Atendimento em domicílio em Maceió. Você não precisa levar nada a lugar nenhum.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="duvidas" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <span class="eyebrow" data-reveal><i></i>Dúvidas frequentes</span>
+      <h2 data-reveal style="--d:.1s">Ficou alguma <em>dúvida?</em></h2>
+      <p data-reveal style="--d:.2s">Separamos as perguntas mais comuns. Se a sua não estiver aqui, é só chamar.</p>
+      <a class="btn btn-dark" data-reveal style="--d:.3s" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+    </div>
+    <div class="faq-list">
+      <details data-reveal><summary>O serviço é feito na minha casa?<span class="pm"></span></summary><div class="ans"><div><p>Sim. Atendemos em domicílio em Maceió: levamos todo o equipamento e realizamos a higienização no próprio local.</p></div></div></details>
+      <details data-reveal style="--d:.06s"><summary>Quanto tempo leva para secar?<span class="pm"></span></summary><div class="ans"><div><p>O tempo de secagem varia conforme o tecido, a ventilação e o clima. No atendimento informamos a previsão para o seu estofado e as dicas para acelerar a secagem.</p></div></div></details>
+      <details data-reveal style="--d:.12s"><summary>Remove manchas e mau cheiro?<span class="pm"></span></summary><div class="ans"><div><p>A higienização remove sujeira, odores e grande parte das manchas. Algumas manchas antigas ou que alteraram a cor do tecido podem não sair por completo — avaliamos e avisamos antes.</p></div></div></details>
+      <details data-reveal style="--d:.18s"><summary>O que é a impermeabilização?<span class="pm"></span></summary><div class="ans"><div><p>É uma proteção aplicada sobre o tecido que ajuda a repelir líquidos e sujeira, facilitando a limpeza no dia a dia e prolongando a vida útil do estofado.</p></div></div></details>
+      <details data-reveal style="--d:.24s"><summary>Como faço um orçamento?<span class="pm"></span></summary><div class="ans"><div><p>Chame no WhatsApp (82) 99999-6211, conte o que precisa higienizar e, se possível, mande fotos. Respondemos com o valor e os horários disponíveis.</p></div></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOCALIZAÇÃO ========== -->
+<section class="loc">
+  <div class="wrap">
+    <div class="loc-card" data-reveal="scale">
+      <div class="loc-info">
+        <span class="eyebrow"><i></i>Onde estamos</span>
+        <h2>Atendemos <em>Maceió</em><br>e região.</h2>
+        <div class="loc-rows">
+          <div class="loc-row"><div class="ic"><svg><use href="#i-pin"/></svg></div><div><small>Endereço</small><span>Rua Amazonas, 22 – Bloco A, 204<br>Feitosa, Maceió – AL, 57043-450</span></div></div>
+          <div class="loc-row"><div class="ic"><svg><use href="#i-wa"/></svg></div><div><small>WhatsApp</small><a href="https://wa.me/5582999996211" target="_blank" rel="noopener">(82) 99999-6211</a></div></div>
+          <div class="loc-row"><div class="ic"><svg><use href="#i-ig"/></svg></div><div><small>Instagram</small><a href="https://www.instagram.com/soscleanmcz" target="_blank" rel="noopener">@soscleanmcz</a></div></div>
+        </div>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" title="Mapa — S.O.S Clean MCZ" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Amazonas,+22,+Feitosa,+Macei%C3%B3+-+AL,+57043-450&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal><i></i>Agende agora</span>
+    <h2>
+      <span class="mask" data-reveal><span>Transforme sua casa</span></span>
+      <span class="mask" data-reveal><span style="--d:.12s">com <em>estofados limpos.</em></span></span>
+    </h2>
+    <p data-reveal style="--d:.2s">Peça seu orçamento sem compromisso. Respondemos rapidinho pelo WhatsApp.</p>
+    <div class="cta-actions" data-reveal style="--d:.3s">
+      <a class="btn btn-light" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/soscleanmcz" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Siga no Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:14px"><img src="assets/logo-branca.png" alt="S.O.S Clean MCZ — Higienização e Impermeabilização" width="371" height="182">
+        </a>
+        <p style="max-width:34ch">Higienização e impermeabilização de estofados em Maceió-AL. Atendimento em domicílio.</p>
+      </div>
+      <div><h4>Serviços</h4><ul><li>Sofás e poltronas</li><li>Colchões</li><li>Cadeiras e tapetes</li><li>Interior de veículos</li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://wa.me/5582999996211" target="_blank" rel="noopener">(82) 99999-6211</a></li><li><a href="https://www.instagram.com/soscleanmcz" target="_blank" rel="noopener">@soscleanmcz</a></li><li>Feitosa, Maceió – AL</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="y"></span> S.O.S Clean MCZ. Todos os direitos reservados.</span><a href="#top">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="https://wa.me/5582999996211?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener" aria-label="Pedir orçamento pelo WhatsApp"><svg><use href="#i-wa"/></svg><span>Pedir orçamento</span></a>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // entrada e saída suaves ao rolar
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('[data-reveal], .hero h1').forEach(el => io.observe(el));
+
+  requestAnimationFrame(() => document.body.classList.add('loaded'));
+
+  // nav: fundo ao rolar, esconde ao descer, mostra ao subir
+  const nav = document.getElementById('nav'), wa = document.getElementById('wa'), heroBg = document.querySelector('.hero-bg');
+  let lastY = 0;
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    nav.classList.toggle('hide', y > 500 && y > lastY);
+    wa.classList.toggle('show', y > 520);
+    if (y < innerHeight) heroBg.style.transform = `translate3d(0,${y * 0.3}px,0)`;
+    lastY = y;
+  }, { passive: true });
+
+  // marquee infinito: repete o conteúdo até cobrir a tela e duplica para o loop sem emenda
+  const track = document.querySelector('.marquee-track'), item = track.firstElementChild;
+  function fillMarquee() {
+    track.replaceChildren(item);
+    const w = item.offsetWidth;
+    const copies = Math.max(2, Math.ceil(screen.width / w) + 1);
+    for (let i = 1; i < copies * 2; i++) track.appendChild(item.cloneNode(true));
+    track.style.setProperty('--dur', (w * copies / 30) + 's');
+  }
+  document.fonts.ready.then(fillMarquee);
+  let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(fillMarquee, 200); });
+
+  // antes / depois
+  const cmp = document.getElementById('compare'), range = cmp.querySelector('input');
+  range.addEventListener('input', () => {
+    cmp.style.setProperty('--pos', range.value + '%');
+    cmp.classList.add('touched');
+  });
+</script>
+</body>
+</html>
